@@ -1,0 +1,6 @@
+{
+	"`CONFIG_CONN_NAME`": "projects/x-eval-test/locations/us-central1/connections/pubsub",
+	"`CONFIG_ENV`": "qa",
+	"`CONFIG_TOPIC`": "projects/x-eval-test/topics/mytopic",
+	"`CONFIG_URL`": "https://mocktarget.apigee.net/echo"
+}
