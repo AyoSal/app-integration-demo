@@ -1,6 +1,6 @@
 {
 	"description": "Sample integration for CI/CD",
-	"snapshotNumber": "1",
+	"snapshotNumber": "4",
 	"triggerConfigs": [
 		{
 			"label": "API Trigger",
@@ -165,7 +165,7 @@
 				"connectionName": {
 					"key": "connectionName",
 					"value": {
-						"stringValue": "$`CONFIG_CONN_NAME`$"
+						"stringValue": "projects/ayos-os-test/locations/us-central1/connections/pubsub"
 					}
 				},
 				"connectionVersion": {
@@ -307,7 +307,7 @@
 				"displayName": "`CONFIG_ENV`"
 			},
 			"value": {
-				"stringValue": "dev"
+				"stringValue": "qa"
 			}
 		},
 		{
@@ -320,7 +320,7 @@
 				"displayName": "`CONFIG_URL`"
 			},
 			"value": {
-				"stringValue": "https://httpbin.org/get"
+				"stringValue": "https://mocktarget.apigee.net"
 			}
 		},
 		{
@@ -333,7 +333,7 @@
 				"displayName": "`CONFIG_CONN_NAME`"
 			},
 			"value": {
-				"stringValue": "projects/ayos-os-test/locations/us-central1/connections/pubsub"
+				"stringValue": "projects/x-eval-test/locations/us-central1/connections/pubsub"
 			}
 		},
 		{
@@ -346,13 +346,15 @@
 				"displayName": "`CONFIG_TOPIC`"
 			},
 			"value": {
-				"stringValue": "projects/ayos-os-test/topics/mytopic"
+				"stringValue": "projects/x-eval-test/topics/mytopic"
 			}
 		}
 	],
+	"userLabel": "c9c1a40",
 	"databasePersistencePolicy": "",
 	"cloudLoggingDetails": {
-		"cloudLoggingSeverity": "",
-		"enableCloudLogging": false
-	}
+		"cloudLoggingSeverity": "INFO",
+		"enableCloudLogging": true
+	},
+	"enableVariableMasking": true
 }

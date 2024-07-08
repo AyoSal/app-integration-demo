@@ -1,4 +1,4 @@
-# Copyright 2024 Google LLC
+# Copyright 2023 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,11 +14,8 @@
 
 #to manually trigger from gcloud
 # gcloud builds submit --config=deploy.yaml --project=project-name --region=us-west1
+
 steps:
-- id: 'Integration CLI version'
-  name: us-docker.pkg.dev/appintegration-toolkit/images/integrationcli:latest
-  args:
-    - --version
 - id: 'Apply Integration scaffolding configuration'
   name: us-docker.pkg.dev/appintegration-toolkit/images/integrationcli:latest
   args:
@@ -32,18 +29,23 @@ steps:
     - --reg=${_LOCATION}
     - --proj=${PROJECT_ID}
     - --metadata-token
-    - --env=${BRANCH_NAME}
     - $(cat /tmp/cmd)
+    # uncomment these as necessary
+    #- --g=${_GRANT_PERMISSIONS}
+    #- --create-secret=${_CREATE_SECRET}
+    #- -k=locations/$LOCATION/keyRings/${_KMS_RING_NAME}/cryptoKeys/${_KMS_KEY_NAME}
+    #- --sa=${_SERVICE_ACCOUNT_NAME}
 
+#the name of the service account  to use when setting up the connector
 substitutions:
-  _LOCATION: "us-central1"
-  _BUILD_INTEGRATION_HOST: "${_LOCATION}-integrations.googleapis.com"
+  _GRANT_PERMISSIONS: "true"
+  _CREATE_SECRET: "false"
+  _ENCRYPTED: "false"
+  _DEFAULT_SA: "false"
+  _SERVICE_ACCOUNT_NAME: "connectors"
+  _KMS_RING_NAME: "app-integration"
+  _KMS_KEY_NAME: "integration"
   _WAIT: "true"
-  _CREATE_SECRET: "false" # do not create Secret Manager secrets
-  _GRANT_PERMISSIONS: "true" # grant service account permissions
-  _ENCRYPTED: "false"    # use encryption
-  _DEFAULT_SA: "false"   # use default service account
-  _SERVICE_ACCOUNT_NAME: "apigee-non-prod@ayos-os-test.iam.gserviceaccount.com"   
 
 options:
   logging: CLOUD_LOGGING_ONLY
