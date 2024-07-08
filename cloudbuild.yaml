@@ -38,6 +38,7 @@ steps:
 
 #the name of the service account  to use when setting up the connector
 substitutions:
+  _LOCATION: "us-central1"
   _GRANT_PERMISSIONS: "true"
   _CREATE_SECRET: "false"
   _ENCRYPTED: "false"
