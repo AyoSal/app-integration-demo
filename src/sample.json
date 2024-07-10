@@ -1,6 +1,6 @@
 {
-	"description": "Sample Integration for CI/CD",
-	"snapshotNumber": "2",
+	"description": "Sample integration for CI/CD",
+	"snapshotNumber": "5",
 	"triggerConfigs": [
 		{
 			"label": "API Trigger",
@@ -165,7 +165,7 @@
 				"connectionName": {
 					"key": "connectionName",
 					"value": {
-						"stringValue": "$`CONFIG_CONN_NAME`$"
+						"stringValue": "projects/ayos-os-test/locations/us-central1/connections/pubsub"
 					}
 				},
 				"connectionVersion": {
@@ -278,14 +278,6 @@
 			"jsonSchema": "{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"message\": {\n      \"type\": \"string\",\n      \"description\": \"Message to publish to Cloud PubSub.\"\n    },\n    \"topic\": {\n      \"type\": \"string\",\n      \"description\": \"Topic of Cloud PubSub.\"\n    },\n    \"attributes\": {\n      \"type\": [\"string\", \"null\"],\n      \"description\": \"Custom attributes as metadata in pub/sub messages.\"\n    }\n  },\n  \"required\": [\"message\", \"topic\"]\n}"
 		},
 		{
-			"key": "`Task_2_connectorOutputPayload`",
-			"dataType": "JSON_VALUE",
-			"isTransient": true,
-			"inputOutputType": "OUT",
-			"producer": "1_2",
-			"jsonSchema": "{\n  \"type\": \"array\",\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"items\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"messageId\": {\n        \"type\": \"string\",\n        \"description\": \"Message ID of the published message.\"\n      }\n    },\n    \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n  }\n}"
-		},
-		{
 			"key": "`Task_1_responseBody`",
 			"dataType": "STRING_VALUE",
 			"defaultValue": {
@@ -294,6 +286,14 @@
 			"isTransient": true,
 			"inputOutputType": "OUT",
 			"producer": "1_1"
+		},
+		{
+			"key": "`Task_2_connectorOutputPayload`",
+			"dataType": "JSON_VALUE",
+			"isTransient": true,
+			"inputOutputType": "OUT",
+			"producer": "1_2",
+			"jsonSchema": "{\n  \"type\": \"array\",\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"items\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"messageId\": {\n        \"type\": \"string\",\n        \"description\": \"Message ID of the published message.\"\n      }\n    },\n    \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n  }\n}"
 		}
 	],
 	"integrationConfigParameters": [
@@ -341,7 +341,7 @@
 				"key": "`CONFIG_TOPIC`",
 				"dataType": "STRING_VALUE",
 				"defaultValue": {
-					"stringValue": ""
+					"stringValue": "projects/ayos-os-test/topics/mytopic"
 				},
 				"displayName": "`CONFIG_TOPIC`"
 			},
@@ -352,7 +352,8 @@
 	],
 	"databasePersistencePolicy": "",
 	"cloudLoggingDetails": {
-		"cloudLoggingSeverity": "",
-		"enableCloudLogging": false
-	}
+		"cloudLoggingSeverity": "INFO",
+		"enableCloudLogging": true
+	},
+	"enableVariableMasking": true
 }
