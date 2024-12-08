@@ -1,6 +1,6 @@
 {
-	"`CONFIG_CONN_NAME`": "projects/ayos-os-test/locations/us-central1/connections/pubsub",
+	"`CONFIG_CONN_NAME`": "projects/x-eval-test/locations/us-central1/connections/pubsub",
 	"`CONFIG_ENV`": "dev",
-	"`CONFIG_TOPIC`": "projects/ayos-os-test/topics/mytopic",
+	"`CONFIG_TOPIC`": "projects/x-eval-test/topics/mytopic",
 	"`CONFIG_URL`": "https://httpbin.org/get"
 }
