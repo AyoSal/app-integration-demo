@@ -32,7 +32,7 @@ steps:
     - --reg=${_LOCATION}
     - --proj=${PROJECT_ID}
     - --metadata-token
-    - --env=${BRANCH}
+    - --env=${BRANCH_NAME}
     - $(cat /tmp/cmd)
     # uncomment these as necessary
     #- --g=${_GRANT_PERMISSIONS}
