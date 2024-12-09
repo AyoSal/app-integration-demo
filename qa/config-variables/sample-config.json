@@ -1,0 +1,6 @@
+{
+	"`CONFIG_CONN_NAME`": "projects/ayos-os-test/locations/us-central1/connections/pubsub",
+	"`CONFIG_ENV`": "qa",
+	"`CONFIG_TOPIC`": "projects/ayos-os-test/topics/mytopic",
+	"`CONFIG_URL`": "https://mocktarget.apigee.net/echo"
+}
