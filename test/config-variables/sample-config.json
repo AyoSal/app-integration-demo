@@ -1,7 +1,6 @@
 {
-	"`CONFIG_CONN_NAME`": "projects/projec114/locations/us-central1/connections/pubsub",
+	"`CONFIG_CONN_NAME`": "projects/app-int-project-444123/locations/us-central1/connections/pubsub",
 	"`CONFIG_ENV`": "test",
-
-	"`CONFIG_TOPIC`": "projects/project114/topics/mytopic",
-	"`CONFIG_URL`": "https://mocktarget.apigee.net/echo"
+	"`CONFIG_TOPIC`": "projects/app-int-project-444123/topics/mytopic",
+	"`CONFIG_URL`": "https://httpbin.org/get"
 }
