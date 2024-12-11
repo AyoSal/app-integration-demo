@@ -1,0 +1,6 @@
+{
+	"`CONFIG_CONN_NAME`": "projects/project114/locations/us-central1/connections/pubsub",
+	"`CONFIG_ENV`": "prod",
+	"`CONFIG_TOPIC`": "projects/project114/topics/mytopic",
+	"`CONFIG_URL`": "https://httpbin.org/get"
+}
